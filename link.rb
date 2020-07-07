@@ -5,11 +5,16 @@ class Link < Post
   end
 
   def to_strings
-    #todo
+    time_string = "Создано : #{@creating_date.strftime("%d:%m:%Y, %H:%M:%S") } \n\r\n\r"
+    [@url,@text,time_string]
   end
 
   def read_from_console
-    #todo
+    puts 'Введите адрес ссылки'
+    @url = STDIN.gets.chomp
+    puts 'Введите описание ссылки'
+    @text = STDIN.gets.chomp
+
   end
 
 
